@@ -7,6 +7,10 @@ from othello.OthelloGame import OthelloGame as Game
 from othello.pytorch.NNet import NNetWrapper as nn
 from utils import *
 
+import tensorflow.compat.v2 as tf
+physical_devices = tf.config.list_physical_devices('GPU') 
+tf.config.experimental.set_memory_growth(physical_devices[0], True)
+
 log = logging.getLogger(__name__)
 
 coloredlogs.install(level='INFO')  # Change this to DEBUG to see more info.
