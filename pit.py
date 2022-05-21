@@ -4,6 +4,9 @@ from tictactoe.TicTacToeGame import TicTacToeGame
 from tictactoe.TicTacToePlayers import *
 from tictactoe.keras.NNet import NNetWrapper as NNet
 
+import tensorflow.compat.v2 as tf
+physical_devices = tf.config.list_physical_devices('GPU') 
+tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 import numpy as np
 from utils import *
