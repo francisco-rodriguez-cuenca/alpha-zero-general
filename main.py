@@ -3,8 +3,8 @@ import logging
 import coloredlogs
 
 from Coach import Coach
-from tictactoe.TicTacToeGame import TicTacToeGame
-from tictactoe.keras.NNet import NNetWrapper as nn
+from tictactoe_4.TicTacToeGame import TicTacToeGame
+from tictactoe_4.keras.NNet import NNetWrapper as nn
 from utils import *
 
 import tensorflow.compat.v2 as tf
