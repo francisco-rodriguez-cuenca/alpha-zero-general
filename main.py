@@ -35,7 +35,7 @@ args = dotdict({
 
 def main():
     log.info('Loading %s...', TicTacToeGame.__name__)
-    g = TicTacToeGame()
+    g = TicTacToeGame(4)
 
     log.info('Loading %s...', nn.__name__)
     nnet = nn(g)

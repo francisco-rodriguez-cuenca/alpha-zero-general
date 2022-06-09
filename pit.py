@@ -18,7 +18,7 @@ any agent.
 
 human_vs_cpu = True
 
-g = TicTacToeGame()
+g = TicTacToeGame(4)
 
 # all players
 rp = RandomPlayer(g).play
