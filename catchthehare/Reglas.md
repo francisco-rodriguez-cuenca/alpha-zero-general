@@ -44,6 +44,8 @@ De todas los posibles movimientos, solo se pueden utilizar aquellos que no conte
 
 movimientos_cazadores + m*2 in movimientos cazadores if m ocupado por cazador
 
+La liebre puede encadenar varios saltos
+
 
 ## C. Disposición inicial de las fichas
 
