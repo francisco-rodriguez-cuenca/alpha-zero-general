@@ -2,7 +2,8 @@ from __future__ import print_function
 import sys
 sys.path.append('..')
 from Game import Game
-from .CatchTheHareLogic import Board
+# from .CatchTheHareLogic import Board
+from CatchTheHareLogic import Board
 import numpy as np
 
 """
@@ -14,13 +15,13 @@ Date: Jan 5, 2018.
 
 Based on the OthelloGame by Surag Nair.
 """
-class TicTacToeGame(Game):
-    def __init__(self, n=3):
-        self.n = n
+class CatchTheHareGame(Game):
+    def __init__(self):
+        self.n = 5
 
     def getInitBoard(self):
         # return initial board (numpy board)
-        b = Board(self.n)
+        b = Board()
         return np.array(b.pieces)
 
     def getBoardSize(self):
@@ -65,8 +66,6 @@ class TicTacToeGame(Game):
             return 1
         if b.is_win(-player):
             return -1
-        if b.has_legal_moves():
-            return 0
         # draw has a very little value 
         return 1e-4
 
@@ -123,3 +122,9 @@ class TicTacToeGame(Game):
         for _ in range(n):
             print ("-", end="-")
         print("--")
+
+if __name__ == "__main__":
+    
+    g = CatchTheHareGame()
+
+    print(g.getInitBoard())

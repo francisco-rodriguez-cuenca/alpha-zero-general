@@ -64,7 +64,6 @@ class Board():
         Returns a numpy array of posible moves
         """
 
-
         if (piece_pos[0] + piece_pos[1]) % 2 == 0:
             movement_set = np.array(
                 [
@@ -94,68 +93,51 @@ class Board():
 
         pieces_pos = self.color_positions(color)
 
-        moves = [(tuple(p), self.get_moves(p, color)) for p in pieces_pos]
+        moves = set()
 
-        return moves
+        for p in pieces_pos:
 
-    def has_legal_moves(self):
-        for y in range(self.n):
-            for x in range(self.n):
-                if self[x][y]==0:
-                    return True
-        return False
+            ms = self.get_moves(p, color)
+
+            if len(ms)>0:
+                for m in ms:
+                    moves.add((tuple(p), tuple(m)))
+
+        return list(moves)
+
+    def has_legal_moves(self, player=-1):
+
+        return len(self.get_legal_moves(player)) > 0
     
     def is_win(self, color):
-        """Check whether the given player has collected a triplet in any direction; 
-        @param color (1=white,-1=black)
+        """Check whether the given player has blocked the hare if it is a hunter, or has 9 hunters left if it is a hare 
+        @param color (1=hunter,-1=hare)
         """
-        win = self.n
-        # check y-strips
-        for y in range(self.n):
-            count = 0
-            for x in range(self.n):
-                if self[x][y]==color:
-                    count += 1
-            if count==win:
+
+        if color == -1:
+            if np.count_nonzero(np.array(self.pieces) == 1) <= 9:
                 return True
-        # check x-strips
-        for x in range(self.n):
-            count = 0
-            for y in range(self.n):
-                if self[x][y]==color:
-                    count += 1
-            if count==win:
+            else:
+                return False
+        else:
+            if len(self.get_legal_moves(-1)) == 0:
                 return True
-        # check two diagonal strips
-        count = 0
-        for d in range(self.n):
-            if self[d][d]==color:
-                count += 1
-        if count==win:
-            return True
-        count = 0
-        for d in range(self.n):
-            if self[d][self.n-d-1]==color:
-                count += 1
-        if count==win:
-            return True
-        
-        return False
+            else:
+                return False
 
     def execute_move(self, move, color):
         """Perform the given move on the board; 
         color gives the color pf the piece to play (1=white,-1=black)
         """
 
-        (x,y) = move
+        start, end = move
 
-        # Add the piece to the empty square.
-        assert self[x][y] == 0
-        self[x][y] = color
+        self.pieces[start[0]][start[1]] = 0
+        self.pieces[end[0]][end[1]] = color
 
 if __name__ == "__main__":
     
     b = Board()
 
-    print(b.get_legal_moves(-1))
-    print(b.get_legal_moves(1))
+    print(b.execute_move(((3, 0), (4, 0)), 1))
+    print(b.pieces)
