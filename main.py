@@ -3,8 +3,8 @@ import logging
 import coloredlogs
 
 from Coach import Coach
-from tictactoe_jump_start.TicTacToeGame import TicTacToeGame
-from tictactoe_jump_start.keras.NNet import NNetWrapper as nn
+from tictactoe.TicTacToeGame import TicTacToeGame
+from tictactoe.keras.NNet import NNetWrapper as nn
 from utils import *
 
 import tensorflow.compat.v2 as tf
@@ -35,7 +35,7 @@ args = dotdict({
 
 def main():
     log.info('Loading %s...', TicTacToeGame.__name__)
-    g = TicTacToeGame(3)
+    g = TicTacToeGame()
 
     log.info('Loading %s...', nn.__name__)
     nnet = nn(g)

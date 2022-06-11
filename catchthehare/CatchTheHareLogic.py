@@ -101,7 +101,7 @@ class Board():
 
             if len(ms)>0:
                 for m in ms:
-                    moves.add((tuple(p), tuple(m)))
+                    moves.add((p[0], p[1], m[0], m[1]))
 
         return list(moves)
 
@@ -110,34 +110,26 @@ class Board():
         return len(self.get_legal_moves(player)) > 0
     
     def is_win(self, color):
-        """Check whether the given player has blocked the hare if it is a hunter, or has 9 hunters left if it is a hare 
-        @param color (1=hunter,-1=hare)
+        """Check whether the given player has blocked the other player
         """
 
-        if color == -1:
-            if np.count_nonzero(np.array(self.pieces) == 1) <= 9:
-                return True
-            else:
-                return False
-        else:
-            if len(self.get_legal_moves(-1)) == 0:
-                return True
-            else:
-                return False
+        return len(self.get_legal_moves(-color)) == 0
 
     def execute_move(self, move, color):
         """Perform the given move on the board; 
         color gives the color pf the piece to play (1=white,-1=black)
         """
 
-        start, end = move
+        start_0, start_1, end_0, end_1 = move
 
-        self.pieces[start[0]][start[1]] = 0
-        self.pieces[end[0]][end[1]] = color
+        self.pieces[start_0][start_1] = 0
+        self.pieces[end_0][end_1] = color
 
 if __name__ == "__main__":
     
     b = Board()
 
-    print(b.execute_move(((3, 0), (4, 0)), 1))
+    print(b.get_legal_moves(-1))
+
+    print(b.execute_move(((2, 2, 3, 3)), -1))
     print(b.pieces)

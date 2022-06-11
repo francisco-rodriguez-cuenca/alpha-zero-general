@@ -2,9 +2,11 @@ from __future__ import print_function
 import sys
 sys.path.append('..')
 from Game import Game
-# from .CatchTheHareLogic import Board
-from CatchTheHareLogic import Board
+from .CatchTheHareLogic import Board
+# from CatchTheHareLogic import Board
 import numpy as np
+from .Digits import int2base
+# from Digits import int2base
 
 """
 Game class implementation for the game of TicTacToe.
@@ -16,8 +18,8 @@ Date: Jan 5, 2018.
 Based on the OthelloGame by Surag Nair.
 """
 class CatchTheHareGame(Game):
-    def __init__(self):
-        self.n = 5
+    def __init__(self, n=5):
+        self.n = n
 
     def getInitBoard(self):
         # return initial board (numpy board)
@@ -30,36 +32,34 @@ class CatchTheHareGame(Game):
 
     def getActionSize(self):
         # return number of actions
-        return self.n*self.n + 1
+        return self.n**4
 
     def getNextState(self, board, player, action):
         # if player takes action on board, return next (board,player)
         # action must be a valid move
-        if action == self.n*self.n:
-            return (board, -player)
         b = Board(self.n)
         b.pieces = np.copy(board)
-        move = (int(action/self.n), action%self.n)
+        move = int2base(action,self.n,4)
         b.execute_move(move, player)
         return (b.pieces, -player)
 
     def getValidMoves(self, board, player):
         # return a fixed size binary vector
         valids = [0]*self.getActionSize()
-        b = Board(self.n)
-        b.pieces = np.copy(board)
+        b = Board()
         legalMoves =  b.get_legal_moves(player)
         if len(legalMoves)==0:
             valids[-1]=1
             return np.array(valids)
-        for x, y in legalMoves:
-            valids[self.n*x+y]=1
+        for x1, y1, x2, y2 in legalMoves:
+            valids[x1+y1*self.n+x2*self.n**2+y2*self.n**3]=1
+
         return np.array(valids)
 
     def getGameEnded(self, board, player):
         # return 0 if not ended, 1 if player 1 won, -1 if player 1 lost
         # player = 1
-        b = Board(self.n)
+        b = Board()
         b.pieces = np.copy(board)
 
         if b.is_win(player):
@@ -74,6 +74,7 @@ class CatchTheHareGame(Game):
         return player*board
 
     def getSymmetries(self, board, pi):
+        # return [(board,pi)]
         # mirror, rotational
         assert(len(pi) == self.n**2+1)  # 1 for pass
         pi_board = np.reshape(pi[:-1], (self.n, self.n))
@@ -124,7 +125,13 @@ class CatchTheHareGame(Game):
         print("--")
 
 if __name__ == "__main__":
+
+    b= Board()
     
     g = CatchTheHareGame()
 
-    print(g.getInitBoard())
+    print(g.display(g.getInitBoard()))
+
+    print(
+        g.getValidMoves(b, 1)
+    )
