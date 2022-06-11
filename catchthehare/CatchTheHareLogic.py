@@ -22,10 +22,10 @@ class Board():
     __directions = [(1,1),(1,0),(1,-1),(0,-1),(-1,-1),(-1,0),(-1,1),(0,1)]
     __jumps = [(2,2),(2,0),(2,-2),(0,-2),(-2,-2),(-2,0),(-2,2),(0,2)]
 
-    def __init__(self):
+    def __init__(self, n = 5):
         "Set up initial board configuration."
 
-        self.n = 5
+        self.n = n
         # Create the empty board array.
 
         # 1 indicates a hunter and -1 indicates a hare
@@ -33,9 +33,9 @@ class Board():
         self.pieces = [
             [1, 1, 1, 1, 1],
             [1, 1, 1, 1, 1],
-            [1, 0, -1, 0, 1],
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0]
+            [1, 1, 0, -1, -1],
+            [-1, -1, -1, -1, -1],
+            [-1, -1, -1, -1, -1]
         ]
 
     # add [][] indexer syntax to the Board
@@ -113,7 +113,7 @@ class Board():
         """Check whether the given player has blocked the other player
         """
 
-        return len(self.get_legal_moves(-color)) == 0
+        return len(self.get_legal_moves(-color)) == 0 or len(self.color_positions(-color)) < 9
 
     def execute_move(self, move, color):
         """Perform the given move on the board; 
@@ -129,7 +129,4 @@ if __name__ == "__main__":
     
     b = Board()
 
-    print(b.get_legal_moves(-1))
-
-    print(b.execute_move(((2, 2, 3, 3)), -1))
-    print(b.pieces)
+    print(b.get_legal_moves(1))

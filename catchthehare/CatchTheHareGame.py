@@ -37,7 +37,7 @@ class CatchTheHareGame(Game):
     def getNextState(self, board, player, action):
         # if player takes action on board, return next (board,player)
         # action must be a valid move
-        b = Board(self.n)
+        b = Board()
         b.pieces = np.copy(board)
         move = int2base(action,self.n,4)
         b.execute_move(move, player)
@@ -64,31 +64,31 @@ class CatchTheHareGame(Game):
 
         if b.is_win(player):
             return 1
-        if b.is_win(-player):
+        elif b.is_win(-player):
             return -1
-        # draw has a very little value 
-        return 1e-4
+        else:
+            return 0
 
     def getCanonicalForm(self, board, player):
         # return state if player==1, else return -state if player==-1
         return player*board
 
     def getSymmetries(self, board, pi):
-        # return [(board,pi)]
+        return [(board,pi)]
         # mirror, rotational
-        assert(len(pi) == self.n**2+1)  # 1 for pass
-        pi_board = np.reshape(pi[:-1], (self.n, self.n))
-        l = []
+        # assert(len(pi) == self.n**2+1)  # 1 for pass
+        # pi_board = np.reshape(pi[:-1], (self.n, self.n))
+        # l = []
 
-        for i in range(1, 5):
-            for j in [True, False]:
-                newB = np.rot90(board, i)
-                newPi = np.rot90(pi_board, i)
-                if j:
-                    newB = np.fliplr(newB)
-                    newPi = np.fliplr(newPi)
-                l += [(newB, list(newPi.ravel()) + [pi[-1]])]
-        return l
+        # for i in range(1, 5):
+        #     for j in [True, False]:
+        #         newB = np.rot90(board, i)
+        #         newPi = np.rot90(pi_board, i)
+        #         if j:
+        #             newB = np.fliplr(newB)
+        #             newPi = np.fliplr(newPi)
+        #         l += [(newB, list(newPi.ravel()) + [pi[-1]])]
+        # return l
 
     def stringRepresentation(self, board):
         # 8x8 numpy array (canonical board)
