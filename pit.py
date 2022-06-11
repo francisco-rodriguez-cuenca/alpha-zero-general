@@ -1,8 +1,8 @@
 import Arena
 from MCTS import MCTS
-from tictactoe_jump.TicTacToeGame import TicTacToeGame
-from tictactoe_jump.TicTacToePlayers import *
-from tictactoe_jump.keras.NNet import NNetWrapper as NNet
+from tictactoe_jump_start.TicTacToeGame import TicTacToeGame
+from tictactoe_jump_start.TicTacToePlayers import *
+from tictactoe_jump_start.keras.NNet import NNetWrapper as NNet
 
 import tensorflow.compat.v2 as tf
 physical_devices = tf.config.list_physical_devices('GPU') 
