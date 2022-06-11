@@ -1,8 +1,8 @@
 import Arena
 from MCTS import MCTS
-from tictactoe_4.TicTacToeGame import TicTacToeGame
-from tictactoe_4.TicTacToePlayers import *
-from tictactoe_4.keras.NNet import NNetWrapper as NNet
+from tictactoe_jump.TicTacToeGame import TicTacToeGame
+from tictactoe_jump.TicTacToePlayers import *
+from tictactoe_jump.keras.NNet import NNetWrapper as NNet
 
 import tensorflow.compat.v2 as tf
 physical_devices = tf.config.list_physical_devices('GPU') 
@@ -18,7 +18,7 @@ any agent.
 
 human_vs_cpu = True
 
-g = TicTacToeGame(4)
+g = TicTacToeGame(3)
 
 # all players
 rp = RandomPlayer(g).play

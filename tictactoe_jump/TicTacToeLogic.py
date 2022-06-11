@@ -19,6 +19,7 @@ class Board():
 
     # list of all 8 directions on the board, as (x,y) offsets
     __directions = [(1,1),(1,0),(1,-1),(0,-1),(-1,-1),(-1,0),(-1,1),(0,1)]
+    __jumps = [(2,2),(2,0),(2,-2),(0,-2),(0,2),(-2,-2),(-2,0),(-2,2)]
 
     def __init__(self, n=3):
         "Set up initial board configuration."
@@ -103,3 +104,18 @@ class Board():
         assert self[x][y] == 0
         self[x][y] = color
 
+        # Eliminate -color if there is a -color between two of color
+
+        posible_directions = [[x_, y_] for x_, y_ in self.__jumps if (x+x_>=0) & (x+x_<self.n) & (y+y_>=0) & (y+y_<self.n)]
+
+        for x_, y_ in posible_directions:
+            
+            jump_x = x+x_
+            jump_y = y+y_
+
+            in_between_x = x+int(x_/2)
+            in_between_y = y+int(y_/2)
+
+            if self[jump_x][jump_y] == color and self[in_between_x][in_between_y] == -color:
+
+                self[in_between_x][in_between_y] = 0
