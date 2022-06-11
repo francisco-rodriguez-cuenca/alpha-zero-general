@@ -1,8 +1,11 @@
 import Arena
 from MCTS import MCTS
-from catchthehare.CatchTheHareGame import CatchTheHareGame
-from catchthehare.CatchTheHarePlayers import *
-from catchthehare.keras.NNet import NNetWrapper as NNet
+from alquerque.AlquerqueGame import AlquerqueGame
+from alquerque.AlquerquePlayers import *
+from alquerque.keras.NNet import NNetWrapper as NNet
+
+import sys
+sys.setrecursionlimit(199999)
 
 import tensorflow.compat.v2 as tf
 physical_devices = tf.config.list_physical_devices('GPU') 
@@ -18,7 +21,7 @@ any agent.
 
 human_vs_cpu = False
 
-g = CatchTheHareGame()
+g = AlquerqueGame()
 
 # all players
 rp = RandomPlayer(g).play
@@ -45,6 +48,6 @@ else:
 
     player2 = n2p  # Player 2 is neural network if it's cpu vs cpu.
 
-arena = Arena.Arena(n1p, player2, g, display=CatchTheHareGame.display)
+arena = Arena.Arena(n1p, player2, g, display=AlquerqueGame.display)
 
 print(arena.playGames(2, verbose=True))

@@ -2,7 +2,7 @@ from __future__ import print_function
 import sys
 sys.path.append('..')
 from Game import Game
-from .CatchTheHareLogic import Board
+from .AlquerqueLogic import Board
 # from CatchTheHareLogic import Board
 import numpy as np
 from .Digits import int2base
@@ -17,7 +17,7 @@ Date: Jan 5, 2018.
 
 Based on the OthelloGame by Surag Nair.
 """
-class CatchTheHareGame(Game):
+class AlquerqueGame(Game):
     def __init__(self, n=5):
         self.n = n
 
@@ -128,7 +128,7 @@ if __name__ == "__main__":
 
     b= Board()
     
-    g = CatchTheHareGame()
+    g = AlquerqueGame()
 
     print(g.display(g.getInitBoard()))
 

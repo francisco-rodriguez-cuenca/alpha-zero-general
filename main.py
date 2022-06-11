@@ -4,8 +4,8 @@ import sys
 import coloredlogs
 
 from Coach import Coach
-from catchthehare.CatchTheHareGame import CatchTheHareGame
-from catchthehare.keras.NNet import NNetWrapper as nn
+from alquerque.AlquerqueGame import AlquerqueGame
+from alquerque.keras.NNet import NNetWrapper as nn
 from utils import *
 
 import tensorflow.compat.v2 as tf
@@ -19,26 +19,26 @@ log = logging.getLogger(__name__)
 coloredlogs.install(level='INFO')  # Change this to DEBUG to see more info.
 
 args = dotdict({
-    'numIters': 3,
-    'numEps': 3,              # Number of complete self-play games to simulate during a new iteration.
-    'tempThreshold': 15,        #
+    'numIters': 2,
+    'numEps': 1,              # Number of complete self-play games to simulate during a new iteration.
+    'tempThreshold': 2,        #
     'updateThreshold': 0.6,     # During arena playoff, new neural net will be accepted if threshold or more of games are won.
-    'maxlenOfQueue': 20,    # Number of game examples to train the neural networks.
-    'numMCTSSims': 15,          # Number of games moves for MCTS to simulate.
-    'arenaCompare': 20,         # Number of games to play during arena play to determine if new net will be accepted.
+    'maxlenOfQueue': 2,    # Number of game examples to train the neural networks.
+    'numMCTSSims': 2,          # Number of games moves for MCTS to simulate.
+    'arenaCompare': 2,         # Number of games to play during arena play to determine if new net will be accepted.
     'cpuct': 1,
 
     'checkpoint': './temp/',
     'load_model': False,
     'load_folder_file': ('/dev/models/8x100x50','best.pth.tar'),
-    'numItersForTrainExamplesHistory': 20,
+    'numItersForTrainExamplesHistory': 10,
 
 })
 
 
 def main():
-    log.info('Loading %s...', CatchTheHareGame.__name__)
-    g = CatchTheHareGame()
+    log.info('Loading %s...', AlquerqueGame.__name__)
+    g = AlquerqueGame()
 
     log.info('Loading %s...', nn.__name__)
     nnet = nn(g)

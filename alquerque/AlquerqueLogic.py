@@ -52,8 +52,8 @@ class Board():
     def legal_move(self, position):
         "Returns if a move is legal"
         return (
-            (position[0] >= 0) and (position[0] < 5) 
-            and (position[1] >= 0) and (position[1] < 5) 
+            (position[0] >= 0) and (position[0] < self.n) 
+            and (position[1] >= 0) and (position[1] < self.n) 
             and self.pieces[position[0]][position[1]] == 0
         )
 
@@ -81,9 +81,19 @@ class Board():
                 ]
             )
 
-        initial_legal_moves = [(m[0]+piece_pos[0], m[1]+piece_pos[1]) for m in movement_set if self.legal_move([m[0]+piece_pos[0], m[1]+piece_pos[1]])]
+        legal_moves = [(m[0]+piece_pos[0], m[1]+piece_pos[1]) for m in movement_set if self.legal_move([m[0]+piece_pos[0], m[1]+piece_pos[1]])]
 
-        return initial_legal_moves
+        jump_movement = [
+            (m[0]*2+piece_pos[0], m[1]*2+piece_pos[1]) 
+            for m in movement_set 
+            if 
+                self.legal_move([m[0]*2+piece_pos[0], m[1]*2+piece_pos[1]])
+                and self.pieces[m[0]+piece_pos[0]][m[1]+piece_pos[1]] == -color
+        ]
+
+        legal_moves = jump_movement + legal_moves
+
+        return legal_moves
 
     def get_legal_moves(self, color):
         """Returns all the legal moves for the given color.
@@ -122,11 +132,27 @@ class Board():
 
         start_0, start_1, end_0, end_1 = move
 
-        self.pieces[start_0][start_1] = 0
-        self.pieces[end_0][end_1] = color
+        diff_0 = end_0-start_0
+        diff_1 = end_1-start_1
+
+        if 2 in [abs(diff_0), abs(diff_1)]: # Salto
+
+            opponent_0 = start_0 + int(diff_0/2)
+            opponent_1 = start_1 + int(diff_1/2)
+
+            self.pieces[start_0][start_1] = 0
+            self.pieces[opponent_0][opponent_1] = 0
+            self.pieces[end_0][end_1] = color
+
+        else:
+
+            self.pieces[start_0][start_1] = 0
+            self.pieces[end_0][end_1] = color
 
 if __name__ == "__main__":
     
     b = Board()
 
     print(b.get_legal_moves(1))
+    b.execute_move((1, 3, 3, 3), 1)
+    print(b.pieces)
