@@ -18,7 +18,7 @@ Date: Jan 5, 2018.
 Based on the OthelloGame by Surag Nair.
 """
 class AlquerqueGame(Game):
-    def __init__(self, n=5):
+    def __init__(self, n=3):
         self.n = n
 
     def getInitBoard(self):
@@ -71,6 +71,7 @@ class AlquerqueGame(Game):
 
     def getCanonicalForm(self, board, player):
         # return state if player==1, else return -state if player==-1
+        print(board)
         return player*board
 
     def getSymmetries(self, board, pi):
