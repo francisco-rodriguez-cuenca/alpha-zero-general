@@ -7,6 +7,7 @@ from .AlquerqueLogic import Board
 import numpy as np
 from .Digits import int2base
 # from Digits import int2base
+import time
 
 """
 Game class implementation for the game of TicTacToe.
@@ -32,12 +33,14 @@ class AlquerqueGame(Game):
 
     def getActionSize(self):
         # return number of actions
-        return self.n**4
+        return self.n**4 + 1
 
     def getNextState(self, board, player, action):
         # if player takes action on board, return next (board,player)
         # action must be a valid move
-        b = Board()
+        if action == self.n*self.n:
+            return (board, -player)
+        b = Board(self.n)
         b.pieces = np.copy(board)
         move = int2base(action,self.n,4)
         b.execute_move(move, player)
@@ -46,7 +49,8 @@ class AlquerqueGame(Game):
     def getValidMoves(self, board, player):
         # return a fixed size binary vector
         valids = [0]*self.getActionSize()
-        b = Board()
+        b = Board(self.n)
+        b.pieces = np.copy(board)
         legalMoves =  b.get_legal_moves(player)
         if len(legalMoves)==0:
             valids[-1]=1
@@ -59,7 +63,7 @@ class AlquerqueGame(Game):
     def getGameEnded(self, board, player):
         # return 0 if not ended, 1 if player 1 won, -1 if player 1 lost
         # player = 1
-        b = Board()
+        b = Board(self.n)
         b.pieces = np.copy(board)
 
         if b.is_win(player):
@@ -75,20 +79,6 @@ class AlquerqueGame(Game):
 
     def getSymmetries(self, board, pi):
         return [(board,pi)]
-        # mirror, rotational
-        # assert(len(pi) == self.n**2+1)  # 1 for pass
-        # pi_board = np.reshape(pi[:-1], (self.n, self.n))
-        # l = []
-
-        # for i in range(1, 5):
-        #     for j in [True, False]:
-        #         newB = np.rot90(board, i)
-        #         newPi = np.rot90(pi_board, i)
-        #         if j:
-        #             newB = np.fliplr(newB)
-        #             newPi = np.fliplr(newPi)
-        #         l += [(newB, list(newPi.ravel()) + [pi[-1]])]
-        # return l
 
     def stringRepresentation(self, board):
         # 8x8 numpy array (canonical board)
