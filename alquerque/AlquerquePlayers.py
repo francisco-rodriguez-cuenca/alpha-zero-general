@@ -1,4 +1,5 @@
 import numpy as np
+from .Digits import int2base
 
 """
 Random and Human-ineracting players for the game of TicTacToe.
@@ -21,24 +22,23 @@ class RandomPlayer():
         return a
 
 
-class HumanTicTacToePlayer():
+class HumanAlquerquePlayer():
     def __init__(self, game):
         self.game = game
 
     def play(self, board):
         # display(board)
         valid = self.game.getValidMoves(board, 1)
+
         for i in range(len(valid)):
             if valid[i]:
-                print(int(i/self.game.n), int(i%self.game.n))
-        while True: 
-            # Python 3.x
-            a = input()
-            # Python 2.x 
-            # a = raw_input()
+                print(int2base(i,self.game.n,4))
 
-            x,y = [int(x) for x in a.split(' ')]
-            a = self.game.n * x + y if x!= -1 else self.game.n ** 2
+        while True:
+            a = input()
+
+            x1,y1,x2,y2 = [int(x) for x in a.strip().split(' ')]
+            a = x1 + y1 * self.game.n + x2 * self.game.n**2 + y2 * self.game.n**3 
             if valid[a]:
                 break
             else:

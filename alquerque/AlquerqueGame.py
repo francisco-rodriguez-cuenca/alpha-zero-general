@@ -3,10 +3,8 @@ import sys
 sys.path.append('..')
 from Game import Game
 from .AlquerqueLogic import Board
-# from CatchTheHareLogic import Board
 import numpy as np
 from .Digits import int2base
-# from Digits import int2base
 import time
 
 """
