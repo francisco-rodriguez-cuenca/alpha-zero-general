@@ -146,8 +146,33 @@ class Board():
 
         else:
 
-            self.pieces[start_0][start_1] = 0
-            self.pieces[end_0][end_1] = color
+            ## Delete self.pieces that have not jumped when given the opportunity
+
+            should_jump = []
+
+            for m in self.get_legal_moves(color):
+
+                s_0, s_1, e_0, e_1 = m
+
+                d_0 = e_0-s_0
+                d_1 = e_1-s_1
+
+                if 2 in [abs(d_0), abs(d_1)]: # Salto
+
+                    # print("debería haber saltado")
+
+                    self.pieces[s_0][s_1] = 0
+                    should_jump.append((s_0,s_1))
+
+            # If the movement is not one of the pieces that should have jumped, keep it
+
+            if (start_0, start_1) not in should_jump:
+
+                self.pieces[start_0][start_1] = 0
+                self.pieces[end_0][end_1] = color
+
+
+
 
 if __name__ == "__main__":
     
