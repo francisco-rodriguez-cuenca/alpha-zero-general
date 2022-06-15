@@ -89,29 +89,49 @@ class AlquerqueGame(Game):
 
         print("   ", end="")
         for y in range(n):
-            print (y,"", end="")
+            print (f" {y}","", end=" ")
         print("")
         print("  ", end="")
         for _ in range(n):
-            print ("-", end="-")
-        print("--")
+            print ("  ", end="  ")
+        print("  ")
         for y in range(n):
-            print(y, "|",end="")    # print the row #
+            print(y, "  ",end="")    # print the row #
             for x in range(n):
                 piece = board[y][x]    # get the piece to print
                 if piece == -1: print("X ",end="")
                 elif piece == 1: print("O ",end="")
                 else:
                     if x==n:
-                        print("-",end="")
+                        print(" ",end="")
                     else:
-                        print("- ",end="")
-            print("|")
+                        print("  ",end="")
+                if x<n-1:
+                    print("- ",end="")
+            print("  ")
+
+            if y < n-1:
+
+                print("    ",end="")
+
+                for x in range(n):
+                    print("| ",end="")
+                    if x<n-1:
+
+                        if (x + y)%2 == 0:
+                            print("\ ",end="")
+                        else:
+                            print("/ ",end="")
+
+
+                print("  ")
+
 
         print("  ", end="")
+        
         for _ in range(n):
-            print ("-", end="-")
-        print("--")
+            print ("  ", end="  ")
+        print("  ")
 
 if __name__ == "__main__":
 
