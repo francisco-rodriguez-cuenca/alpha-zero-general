@@ -31,13 +31,11 @@ class AlquerqueGame(Game):
 
     def getActionSize(self):
         # return number of actions
-        return self.n**4 + 1
+        return self.n**4
 
     def getNextState(self, board, player, action):
         # if player takes action on board, return next (board,player)
         # action must be a valid move
-        if action == self.n*self.n:
-            return (board, -player)
         b = Board()
         b.pieces = np.copy(board)
         move = int2base(action,self.n,4)
