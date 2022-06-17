@@ -27,7 +27,7 @@ class AlquerqueGame(Game):
 
     def getBoardSize(self):
         # (a,b) tuple
-        return (self.n, self.n)
+        return (self.n+1, self.n)
 
     def getActionSize(self):
         # return number of actions
@@ -66,13 +66,17 @@ class AlquerqueGame(Game):
             return 1
         elif b.is_win(-player):
             return -1
+        elif b.is_draw():
+            return 1e-4
         else:
             return 0
 
+
     def getCanonicalForm(self, board, player):
         # return state if player==1, else return -state if player==-1
-        # print(player*board)
-        return player*board
+        res = np.append(player*board[:self.n], board[self.n:], axis = 0)
+        # print(res)
+        return res
 
     def getSymmetries(self, board, pi):
         return [(board,pi)]
@@ -83,7 +87,7 @@ class AlquerqueGame(Game):
 
     @staticmethod
     def display(board):
-        n = board.shape[0]
+        n = board.shape[1]
 
         print("   ", end="")
         for y in range(n):

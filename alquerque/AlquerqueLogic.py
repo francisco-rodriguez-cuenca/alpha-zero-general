@@ -31,7 +31,8 @@ class Board():
             [1, 1, 1, 1, 1],
             [1, 1, 0, -1, -1],
             [-1, -1, -1, -1, -1],
-            [-1, -1, -1, -1, -1]
+            [-1, -1, -1, -1, -1],
+            [0,0,0,0,0]
         ]
 
     # add [][] indexer syntax to the Board
@@ -41,7 +42,7 @@ class Board():
     def color_positions(self, color):
         "Returns the position of a piece on the board as a tuple"
 
-        pos = np.argwhere(np.array(self.pieces) == color).tolist()
+        pos = np.argwhere(np.array(self.pieces[:self.n]) == color).tolist()
 
         return pos
 
@@ -121,6 +122,11 @@ class Board():
 
         return len(self.get_legal_moves(-color)) == 0
 
+    def is_draw(self):
+        """Check whether the game is too long
+        """
+        return self.pieces[5][0] > 80
+
     def execute_move(self, move, color):
         """Perform the given move on the board; 
         color gives the color pf the piece to play (1=white,-1=black)
@@ -166,6 +172,9 @@ class Board():
 
                 self.pieces[start_0][start_1] = 0
                 self.pieces[end_0][end_1] = color
+
+        ### add a move to the counter
+        self.pieces[5][0] = self.pieces[5][0] + 1
 
 
 
