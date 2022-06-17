@@ -119,7 +119,7 @@ class Board():
         """Check whether the given player has blocked the other player
         """
 
-        return len(self.get_legal_moves(-color)) == 0 or len(self.color_positions(-color)) < 9
+        return len(self.get_legal_moves(-color)) == 0
 
     def execute_move(self, move, color):
         """Perform the given move on the board; 
