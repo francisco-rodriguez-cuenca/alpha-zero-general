@@ -22,10 +22,10 @@ class Board():
     __directions = [(1,1),(1,0),(1,-1),(0,-1),(-1,-1),(-1,0),(-1,1),(0,1)]
     __jumps = [(2,2),(2,0),(2,-2),(0,-2),(-2,-2),(-2,0),(-2,2),(0,2)]
 
-    def __init__(self, n = 5):
+    def __init__(self):
         "Set up initial board configuration."
 
-        self.n = n
+        self.n = 5
         # Create the empty board array.
 
         # 1 indicates a hunter and -1 indicates a hare

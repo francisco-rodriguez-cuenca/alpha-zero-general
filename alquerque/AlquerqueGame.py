@@ -17,8 +17,8 @@ Date: Jan 5, 2018.
 Based on the OthelloGame by Surag Nair.
 """
 class AlquerqueGame(Game):
-    def __init__(self, n=5):
-        self.n = n
+    def __init__(self):
+        self.n = 5
 
     def getInitBoard(self):
         # return initial board (numpy board)
@@ -38,7 +38,7 @@ class AlquerqueGame(Game):
         # action must be a valid move
         if action == self.n*self.n:
             return (board, -player)
-        b = Board(self.n)
+        b = Board()
         b.pieces = np.copy(board)
         move = int2base(action,self.n,4)
         b.execute_move(move, player)
@@ -47,7 +47,7 @@ class AlquerqueGame(Game):
     def getValidMoves(self, board, player):
         # return a fixed size binary vector
         valids = [0]*self.getActionSize()
-        b = Board(self.n)
+        b = Board()
         b.pieces = np.copy(board)
         legalMoves =  b.get_legal_moves(player)
         if len(legalMoves)==0:
@@ -61,7 +61,7 @@ class AlquerqueGame(Game):
     def getGameEnded(self, board, player):
         # return 0 if not ended, 1 if player 1 won, -1 if player 1 lost
         # player = 1
-        b = Board(self.n)
+        b = Board()
         b.pieces = np.copy(board)
 
         if b.is_win(player):
