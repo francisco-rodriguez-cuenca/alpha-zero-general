@@ -14,6 +14,7 @@ Based on the board for the game of Othello by Eric P. Nichols and tictacToe by E
 # from bkcharts.attributes import color
 from turtle import position
 import numpy as np
+from .Digits import int2base
 
 
 class Board():
@@ -125,7 +126,7 @@ class Board():
     def is_draw(self):
         """Check whether the game is too long
         """
-        return self.pieces[5][0] > 80
+        return np.all(self.pieces[5]==1)
 
     def execute_move(self, move, color):
         """Perform the given move on the board; 
@@ -173,8 +174,16 @@ class Board():
                 self.pieces[start_0][start_1] = 0
                 self.pieces[end_0][end_1] = color
 
-        ### add a move to the counter
-        self.pieces[5][0] = self.pieces[5][0] + 1
+        ### add a move to the counter, using base 3 (-1,0,1)
+        n_moves = (self.pieces[5][4]+1)+(self.pieces[5][3]+1)*3+(self.pieces[5][2]+1)*3**2+(self.pieces[5][1]+1)*3**3+(self.pieces[5][0]+1)*3**4
+        n_moves = n_moves + 1
+        x_4,x_3,x_2,x_1,x_0 = int2base(n_moves,3,5)
+
+        self.pieces[5][4] = x_4-1
+        self.pieces[5][3] = x_3-1
+        self.pieces[5][2] = x_2-1
+        self.pieces[5][1] = x_1-1
+        self.pieces[5][0] = x_0-1
 
 
 
