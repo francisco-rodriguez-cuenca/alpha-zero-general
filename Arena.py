@@ -1,7 +1,6 @@
 import logging
 
 from tqdm import tqdm
-import numpy as np
 
 log = logging.getLogger(__name__)
 
@@ -27,7 +26,6 @@ class Arena():
         self.player2 = player2
         self.game = game
         self.display = display
-        self.past_boards = list()
 
     def playGame(self, verbose=False):
         """
@@ -42,8 +40,6 @@ class Arena():
         players = [self.player2, None, self.player1]
         curPlayer = 1
         board = self.game.getInitBoard()
-        self.past_boards = list()
-
         it = 0
         while self.game.getGameEnded(board, curPlayer) == 0:
             it += 1
@@ -60,20 +56,10 @@ class Arena():
                 log.debug(f'valids = {valids}')
                 assert valids[action] > 0
             board, curPlayer = self.game.getNextState(board, curPlayer, action)
-
-            before = any(np.array_equal(board,b) for b in self.past_boards)
-            
-            if len(self.past_boards)>0 and before: #Control repetitions, if you repeat a past position, you lose
-                
-                return curPlayer*(-1)
-            else:
-                self.past_boards.append(np.array(board))
-
         if verbose:
             assert self.display
             print("Game over: Turn ", str(it), "Result ", str(self.game.getGameEnded(board, 1)))
             self.display(board)
-            
         return curPlayer * self.game.getGameEnded(board, curPlayer)
 
     def playGames(self, num, verbose=False):
