@@ -36,7 +36,7 @@ class HumanAlquerquePlayer():
         while True:
             a = input()
 
-            x1,y1,x2,y2 = [int(x) for x in a.strip().split(' ') if x < board.n]
+            x1,y1,x2,y2 = [int(x) for x in a.strip().split(' ')]
             a = x1 + y1 * self.game.n + x2 * self.game.n**2 + y2 * self.game.n**3 
             if valid[a]:
                 break

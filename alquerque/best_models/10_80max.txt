@@ -1,0 +1,382 @@
+conda activate /home/fran/Documents/MBD/SegundoCuatrimestre/ML/DeepLearning/env
+(base) fran@fran-GL65-Leopard-10SEK:~/Documents/IA/alpha-zero-general$ conda activate /home/fran/Documents/MBD/SegundoCuatrimestre/ML/DeepLearning/env
+(/home/fran/Documents/MBD/SegundoCuatrimestre/ML/DeepLearning/env) fran@fran-GL65-Leopard-10SEK:~/Documents/IA/alpha-zero-general$ /home/fran/Documents/MBD/SegundoCuatrimestre/ML/DeepLearning/env/bin/python /home/fran/Documents/IA/alpha-zero-general/main.py
+2022-06-18 00:35:32.973705: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2022-06-18 00:35:34.481652: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2022-06-18 00:35:34.482829: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcuda.so.1
+2022-06-18 00:35:34.516405: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:941] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-18 00:35:34.516675: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce RTX 2060 computeCapability: 7.5
+coreClock: 1.56GHz coreCount: 30 deviceMemorySize: 5.79GiB deviceMemoryBandwidth: 245.91GiB/s
+2022-06-18 00:35:34.516695: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2022-06-18 00:35:34.524871: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2022-06-18 00:35:34.524964: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2022-06-18 00:35:34.529706: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2022-06-18 00:35:34.532094: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2022-06-18 00:35:34.539761: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2022-06-18 00:35:34.542368: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2022-06-18 00:35:34.543213: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2022-06-18 00:35:34.543351: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:941] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-18 00:35:34.543663: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:941] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-18 00:35:34.544151: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2022-06-18 00:35:34 fran-GL65-Leopard-10SEK __main__[4994] INFO Loading AlquerqueGame...
+2022-06-18 00:35:34 fran-GL65-Leopard-10SEK __main__[4994] INFO Loading NNetWrapper...
+2022-06-18 00:35:34.569159: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-06-18 00:35:34.569563: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2022-06-18 00:35:34.569751: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:941] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-18 00:35:34.570147: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce RTX 2060 computeCapability: 7.5
+coreClock: 1.56GHz coreCount: 30 deviceMemorySize: 5.79GiB deviceMemoryBandwidth: 245.91GiB/s
+2022-06-18 00:35:34.570188: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2022-06-18 00:35:34.570231: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2022-06-18 00:35:34.570251: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2022-06-18 00:35:34.570266: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2022-06-18 00:35:34.570281: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2022-06-18 00:35:34.570296: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2022-06-18 00:35:34.570311: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2022-06-18 00:35:34.570327: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2022-06-18 00:35:34.570414: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:941] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-18 00:35:34.570740: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:941] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-18 00:35:34.571039: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2022-06-18 00:35:34.571361: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2022-06-18 00:35:35.228430: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-06-18 00:35:35.228464: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 
+2022-06-18 00:35:35.228472: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N 
+2022-06-18 00:35:35.228892: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:941] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-18 00:35:35.229333: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:941] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-18 00:35:35.229672: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:941] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-18 00:35:35.229931: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 4935 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 2060, pci bus id: 0000:01:00.0, compute capability: 7.5)
+2022-06-18 00:35:35 fran-GL65-Leopard-10SEK __main__[4994] WARNING Not loading a checkpoint!
+2022-06-18 00:35:35 fran-GL65-Leopard-10SEK __main__[4994] INFO Loading the Coach...
+2022-06-18 00:35:35 fran-GL65-Leopard-10SEK __main__[4994] INFO Starting the learning process 🎉
+2022-06-18 00:35:35 fran-GL65-Leopard-10SEK Coach[4994] INFO Starting Iter #1 ...
+Self Play:   0%|                                                                                          | 0/100 [00:00<?, ?it/s]2022-06-18 00:35:35.455307: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+2022-06-18 00:35:35.477688: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2599990000 Hz
+2022-06-18 00:35:35.597649: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2022-06-18 00:35:36.052603: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2022-06-18 00:35:36.058508: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+Self Play: 100%|████████████████████████████████████████████████████████████████████████████████| 100/100 [37:29<00:00, 22.50s/it]
+Checkpoint Directory exists! 
+./temp/temp.pth.tar
+2022-06-18 01:13:05.292928: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+Epoch 1/10
+66/66 [==============================] - 3s 28ms/step - loss: 6.7645 - pi_loss: 5.5326 - v_loss: 1.2320
+Epoch 2/10
+66/66 [==============================] - 1s 21ms/step - loss: 5.6347 - pi_loss: 4.5473 - v_loss: 1.0874
+Epoch 3/10
+66/66 [==============================] - 1s 21ms/step - loss: 5.3581 - pi_loss: 4.3109 - v_loss: 1.0471
+Epoch 4/10
+66/66 [==============================] - 1s 21ms/step - loss: 5.1608 - pi_loss: 4.1342 - v_loss: 1.0266
+Epoch 5/10
+66/66 [==============================] - 1s 21ms/step - loss: 4.9214 - pi_loss: 3.9584 - v_loss: 0.9630
+Epoch 6/10
+66/66 [==============================] - 1s 21ms/step - loss: 4.6184 - pi_loss: 3.6303 - v_loss: 0.9882
+Epoch 7/10
+66/66 [==============================] - 1s 21ms/step - loss: 4.1926 - pi_loss: 3.3202 - v_loss: 0.8724
+Epoch 8/10
+66/66 [==============================] - 1s 21ms/step - loss: 3.8171 - pi_loss: 2.9913 - v_loss: 0.8258
+Epoch 9/10
+66/66 [==============================] - 1s 21ms/step - loss: 3.5482 - pi_loss: 2.7720 - v_loss: 0.7762
+Epoch 10/10
+66/66 [==============================] - 1s 21ms/step - loss: 3.3627 - pi_loss: 2.6005 - v_loss: 0.7622
+2022-06-18 01:13:21 fran-GL65-Leopard-10SEK Coach[4994] INFO PITTING AGAINST PREVIOUS VERSION
+Arena.playGames (1): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [06:58<00:00, 20.91s/it]
+Arena.playGames (2): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [07:01<00:00, 21.05s/it]
+2022-06-18 01:27:20 fran-GL65-Leopard-10SEK Coach[4994] INFO NEW/PREV WINS : 16 / 23 ; DRAWS : 1
+2022-06-18 01:27:20 fran-GL65-Leopard-10SEK Coach[4994] INFO REJECTING NEW MODEL
+2022-06-18 01:27:20.376826: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+2022-06-18 01:27:20 fran-GL65-Leopard-10SEK Coach[4994] INFO Starting Iter #2 ...
+Self Play: 100%|████████████████████████████████████████████████████████████████████████████████| 100/100 [38:33<00:00, 23.14s/it]
+Checkpoint Directory exists! 
+./temp/temp.pth.tar
+2022-06-18 02:05:54.281748: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+Epoch 1/10
+131/131 [==============================] - 3s 25ms/step - loss: 6.1863 - pi_loss: 5.0471 - v_loss: 1.1392
+Epoch 2/10
+131/131 [==============================] - 3s 22ms/step - loss: 5.6304 - pi_loss: 4.6628 - v_loss: 0.9676
+Epoch 3/10
+131/131 [==============================] - 3s 22ms/step - loss: 5.3279 - pi_loss: 4.3854 - v_loss: 0.9425
+Epoch 4/10
+131/131 [==============================] - 3s 22ms/step - loss: 5.1662 - pi_loss: 4.2552 - v_loss: 0.9110
+Epoch 5/10
+131/131 [==============================] - 3s 22ms/step - loss: 5.0131 - pi_loss: 4.1091 - v_loss: 0.9040
+Epoch 6/10
+131/131 [==============================] - 3s 22ms/step - loss: 4.7604 - pi_loss: 3.8831 - v_loss: 0.8774
+Epoch 7/10
+131/131 [==============================] - 3s 22ms/step - loss: 4.4214 - pi_loss: 3.5659 - v_loss: 0.8555
+Epoch 8/10
+131/131 [==============================] - 3s 22ms/step - loss: 4.0710 - pi_loss: 3.2465 - v_loss: 0.8245
+Epoch 9/10
+131/131 [==============================] - 3s 22ms/step - loss: 3.7426 - pi_loss: 2.9503 - v_loss: 0.7924
+Epoch 10/10
+131/131 [==============================] - 3s 22ms/step - loss: 3.5242 - pi_loss: 2.7480 - v_loss: 0.7762
+2022-06-18 02:06:23 fran-GL65-Leopard-10SEK Coach[4994] INFO PITTING AGAINST PREVIOUS VERSION
+Arena.playGames (1): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [07:56<00:00, 23.82s/it]
+Arena.playGames (2): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [08:17<00:00, 24.87s/it]
+2022-06-18 02:22:37 fran-GL65-Leopard-10SEK Coach[4994] INFO NEW/PREV WINS : 22 / 13 ; DRAWS : 5
+2022-06-18 02:22:37 fran-GL65-Leopard-10SEK Coach[4994] INFO ACCEPTING NEW MODEL
+Checkpoint Directory exists! 
+./temp/checkpoint_2.pth.tar
+Checkpoint Directory exists! 
+./temp/best.pth.tar
+2022-06-18 02:22:37 fran-GL65-Leopard-10SEK Coach[4994] INFO Starting Iter #3 ...
+Self Play: 100%|████████████████████████████████████████████████████████████████████████████████| 100/100 [34:17<00:00, 20.57s/it]
+Checkpoint Directory exists! 
+./temp/temp.pth.tar
+2022-06-18 02:56:55.226687: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+Epoch 1/10
+190/190 [==============================] - 5s 24ms/step - loss: 3.1756 - pi_loss: 2.3920 - v_loss: 0.7836
+Epoch 2/10
+190/190 [==============================] - 4s 21ms/step - loss: 3.0042 - pi_loss: 2.2484 - v_loss: 0.7558
+Epoch 3/10
+190/190 [==============================] - 4s 21ms/step - loss: 2.8954 - pi_loss: 2.1608 - v_loss: 0.7346
+Epoch 4/10
+190/190 [==============================] - 4s 21ms/step - loss: 2.7970 - pi_loss: 2.0782 - v_loss: 0.7188
+Epoch 5/10
+190/190 [==============================] - 4s 21ms/step - loss: 2.7148 - pi_loss: 2.0134 - v_loss: 0.7013
+Epoch 6/10
+190/190 [==============================] - 4s 21ms/step - loss: 2.6221 - pi_loss: 1.9471 - v_loss: 0.6750
+Epoch 7/10
+190/190 [==============================] - 4s 21ms/step - loss: 2.5314 - pi_loss: 1.8795 - v_loss: 0.6519
+Epoch 8/10
+190/190 [==============================] - 4s 21ms/step - loss: 2.4408 - pi_loss: 1.8178 - v_loss: 0.6230
+Epoch 9/10
+190/190 [==============================] - 4s 22ms/step - loss: 2.3801 - pi_loss: 1.7718 - v_loss: 0.6083
+Epoch 10/10
+190/190 [==============================] - 4s 21ms/step - loss: 2.2943 - pi_loss: 1.7162 - v_loss: 0.5781
+2022-06-18 02:57:36 fran-GL65-Leopard-10SEK Coach[4994] INFO PITTING AGAINST PREVIOUS VERSION
+Arena.playGames (1): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [07:42<00:00, 23.14s/it]
+Arena.playGames (2): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [11:23<00:00, 34.18s/it]
+2022-06-18 03:16:43 fran-GL65-Leopard-10SEK Coach[4994] INFO NEW/PREV WINS : 11 / 18 ; DRAWS : 11
+2022-06-18 03:16:43 fran-GL65-Leopard-10SEK Coach[4994] INFO REJECTING NEW MODEL
+2022-06-18 03:16:43.432329: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+2022-06-18 03:16:43 fran-GL65-Leopard-10SEK Coach[4994] INFO Starting Iter #4 ...
+Self Play: 100%|████████████████████████████████████████████████████████████████████████████████| 100/100 [35:52<00:00, 21.52s/it]
+Checkpoint Directory exists! 
+./temp/temp.pth.tar
+2022-06-18 03:52:36.006950: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+Epoch 1/10
+252/252 [==============================] - 6s 23ms/step - loss: 3.0281 - pi_loss: 2.2416 - v_loss: 0.7865
+Epoch 2/10
+252/252 [==============================] - 5s 21ms/step - loss: 2.8357 - pi_loss: 2.0805 - v_loss: 0.7553
+Epoch 3/10
+252/252 [==============================] - 5s 21ms/step - loss: 2.7248 - pi_loss: 1.9855 - v_loss: 0.7393
+Epoch 4/10
+252/252 [==============================] - 5s 21ms/step - loss: 2.6206 - pi_loss: 1.8972 - v_loss: 0.7234
+Epoch 5/10
+252/252 [==============================] - 5s 21ms/step - loss: 2.5493 - pi_loss: 1.8450 - v_loss: 0.7043
+Epoch 6/10
+252/252 [==============================] - 5s 21ms/step - loss: 2.4709 - pi_loss: 1.7868 - v_loss: 0.6841
+Epoch 7/10
+252/252 [==============================] - 5s 21ms/step - loss: 2.4035 - pi_loss: 1.7336 - v_loss: 0.6699
+Epoch 8/10
+252/252 [==============================] - 5s 21ms/step - loss: 2.3177 - pi_loss: 1.6769 - v_loss: 0.6408
+Epoch 9/10
+252/252 [==============================] - 5s 21ms/step - loss: 2.2573 - pi_loss: 1.6344 - v_loss: 0.6229
+Epoch 10/10
+252/252 [==============================] - 5s 21ms/step - loss: 2.1746 - pi_loss: 1.5778 - v_loss: 0.5968
+2022-06-18 03:53:30 fran-GL65-Leopard-10SEK Coach[4994] INFO PITTING AGAINST PREVIOUS VERSION
+Arena.playGames (1): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [04:34<00:00, 13.71s/it]
+Arena.playGames (2): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [06:36<00:00, 19.84s/it]
+2022-06-18 04:04:41 fran-GL65-Leopard-10SEK Coach[4994] INFO NEW/PREV WINS : 15 / 24 ; DRAWS : 1
+2022-06-18 04:04:41 fran-GL65-Leopard-10SEK Coach[4994] INFO REJECTING NEW MODEL
+2022-06-18 04:04:41.893834: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+2022-06-18 04:04:41 fran-GL65-Leopard-10SEK Coach[4994] INFO Starting Iter #5 ...
+Self Play: 100%|████████████████████████████████████████████████████████████████████████████████| 100/100 [38:08<00:00, 22.88s/it]
+Checkpoint Directory exists! 
+./temp/temp.pth.tar
+2022-06-18 04:42:50.722626: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+Epoch 1/10
+318/318 [==============================] - 7s 23ms/step - loss: 2.8870 - pi_loss: 2.1059 - v_loss: 0.7811
+Epoch 2/10
+318/318 [==============================] - 7s 21ms/step - loss: 2.6696 - pi_loss: 1.9239 - v_loss: 0.7457
+Epoch 3/10
+318/318 [==============================] - 7s 21ms/step - loss: 2.5617 - pi_loss: 1.8277 - v_loss: 0.7339
+Epoch 4/10
+318/318 [==============================] - 7s 21ms/step - loss: 2.4710 - pi_loss: 1.7549 - v_loss: 0.7162
+Epoch 5/10
+318/318 [==============================] - 7s 21ms/step - loss: 2.3962 - pi_loss: 1.6907 - v_loss: 0.7054
+Epoch 6/10
+318/318 [==============================] - 7s 21ms/step - loss: 2.3261 - pi_loss: 1.6405 - v_loss: 0.6856
+Epoch 7/10
+318/318 [==============================] - 7s 21ms/step - loss: 2.2634 - pi_loss: 1.5978 - v_loss: 0.6656
+Epoch 8/10
+318/318 [==============================] - 7s 21ms/step - loss: 2.1915 - pi_loss: 1.5437 - v_loss: 0.6478
+Epoch 9/10
+318/318 [==============================] - 7s 21ms/step - loss: 2.1273 - pi_loss: 1.4970 - v_loss: 0.6303
+Epoch 10/10
+318/318 [==============================] - 7s 21ms/step - loss: 2.0576 - pi_loss: 1.4572 - v_loss: 0.6004
+2022-06-18 04:43:59 fran-GL65-Leopard-10SEK Coach[4994] INFO PITTING AGAINST PREVIOUS VERSION
+Arena.playGames (1): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [07:40<00:00, 23.05s/it]
+Arena.playGames (2): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [06:12<00:00, 18.64s/it]
+2022-06-18 04:57:53 fran-GL65-Leopard-10SEK Coach[4994] INFO NEW/PREV WINS : 28 / 8 ; DRAWS : 4
+2022-06-18 04:57:53 fran-GL65-Leopard-10SEK Coach[4994] INFO ACCEPTING NEW MODEL
+Checkpoint Directory exists! 
+./temp/checkpoint_5.pth.tar
+Checkpoint Directory exists! 
+./temp/best.pth.tar
+2022-06-18 04:57:53 fran-GL65-Leopard-10SEK Coach[4994] INFO Starting Iter #6 ...
+Self Play: 100%|████████████████████████████████████████████████████████████████████████████████| 100/100 [33:33<00:00, 20.14s/it]
+Checkpoint Directory exists! 
+./temp/temp.pth.tar
+2022-06-18 05:31:28.244095: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+Epoch 1/10
+384/384 [==============================] - 9s 22ms/step - loss: 1.9969 - pi_loss: 1.3813 - v_loss: 0.6156
+Epoch 2/10
+384/384 [==============================] - 8s 21ms/step - loss: 1.9207 - pi_loss: 1.3396 - v_loss: 0.5811
+Epoch 3/10
+384/384 [==============================] - 8s 21ms/step - loss: 1.8516 - pi_loss: 1.2907 - v_loss: 0.5609
+Epoch 4/10
+384/384 [==============================] - 8s 21ms/step - loss: 1.7774 - pi_loss: 1.2453 - v_loss: 0.5321
+Epoch 5/10
+384/384 [==============================] - 8s 21ms/step - loss: 1.7043 - pi_loss: 1.2005 - v_loss: 0.5038
+Epoch 6/10
+384/384 [==============================] - 8s 21ms/step - loss: 1.6321 - pi_loss: 1.1648 - v_loss: 0.4673
+Epoch 7/10
+384/384 [==============================] - 8s 21ms/step - loss: 1.5677 - pi_loss: 1.1280 - v_loss: 0.4397
+Epoch 8/10
+384/384 [==============================] - 8s 21ms/step - loss: 1.5041 - pi_loss: 1.0866 - v_loss: 0.4175
+Epoch 9/10
+384/384 [==============================] - 8s 21ms/step - loss: 1.4552 - pi_loss: 1.0651 - v_loss: 0.3901
+Epoch 10/10
+384/384 [==============================] - 8s 21ms/step - loss: 1.4036 - pi_loss: 1.0387 - v_loss: 0.3650
+2022-06-18 05:32:50 fran-GL65-Leopard-10SEK Coach[4994] INFO PITTING AGAINST PREVIOUS VERSION
+Arena.playGames (1): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [04:43<00:00, 14.16s/it]
+Arena.playGames (2): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [06:15<00:00, 18.76s/it]
+2022-06-18 05:43:49 fran-GL65-Leopard-10SEK Coach[4994] INFO NEW/PREV WINS : 20 / 19 ; DRAWS : 1
+2022-06-18 05:43:49 fran-GL65-Leopard-10SEK Coach[4994] INFO REJECTING NEW MODEL
+2022-06-18 05:43:49.163074: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+2022-06-18 05:43:49 fran-GL65-Leopard-10SEK Coach[4994] INFO Starting Iter #7 ...
+Self Play: 100%|████████████████████████████████████████████████████████████████████████████████| 100/100 [30:20<00:00, 18.21s/it]
+Checkpoint Directory exists! 
+./temp/temp.pth.tar
+2022-06-18 06:14:10.570335: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+Epoch 1/10
+445/445 [==============================] - 10s 22ms/step - loss: 2.0109 - pi_loss: 1.3874 - v_loss: 0.6235
+Epoch 2/10
+445/445 [==============================] - 9s 21ms/step - loss: 1.9271 - pi_loss: 1.3247 - v_loss: 0.6024
+Epoch 3/10
+445/445 [==============================] - 10s 21ms/step - loss: 1.8489 - pi_loss: 1.2725 - v_loss: 0.5764
+Epoch 4/10
+445/445 [==============================] - 10s 21ms/step - loss: 1.7773 - pi_loss: 1.2320 - v_loss: 0.5453
+Epoch 5/10
+445/445 [==============================] - 10s 21ms/step - loss: 1.7128 - pi_loss: 1.1902 - v_loss: 0.5226
+Epoch 6/10
+445/445 [==============================] - 10s 21ms/step - loss: 1.6581 - pi_loss: 1.1612 - v_loss: 0.4969
+Epoch 7/10
+445/445 [==============================] - 10s 21ms/step - loss: 1.5893 - pi_loss: 1.1226 - v_loss: 0.4667
+Epoch 8/10
+445/445 [==============================] - 10s 21ms/step - loss: 1.5415 - pi_loss: 1.0914 - v_loss: 0.4501
+Epoch 9/10
+445/445 [==============================] - 10s 21ms/step - loss: 1.4747 - pi_loss: 1.0585 - v_loss: 0.4162
+Epoch 10/10
+445/445 [==============================] - 10s 21ms/step - loss: 1.4218 - pi_loss: 1.0243 - v_loss: 0.3975
+2022-06-18 06:15:47 fran-GL65-Leopard-10SEK Coach[4994] INFO PITTING AGAINST PREVIOUS VERSION
+Arena.playGames (1): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [04:13<00:00, 12.67s/it]
+Arena.playGames (2): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [06:47<00:00, 20.35s/it]
+2022-06-18 06:26:47 fran-GL65-Leopard-10SEK Coach[4994] INFO NEW/PREV WINS : 28 / 12 ; DRAWS : 0
+2022-06-18 06:26:47 fran-GL65-Leopard-10SEK Coach[4994] INFO ACCEPTING NEW MODEL
+Checkpoint Directory exists! 
+./temp/checkpoint_7.pth.tar
+Checkpoint Directory exists! 
+./temp/best.pth.tar
+2022-06-18 06:26:47 fran-GL65-Leopard-10SEK Coach[4994] INFO Starting Iter #8 ...
+Self Play: 100%|████████████████████████████████████████████████████████████████████████████████| 100/100 [30:00<00:00, 18.00s/it]
+Checkpoint Directory exists! 
+./temp/temp.pth.tar
+2022-06-18 06:56:48.779215: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+Epoch 1/10
+510/510 [==============================] - 11s 22ms/step - loss: 1.4809 - pi_loss: 1.0402 - v_loss: 0.4407
+Epoch 2/10
+510/510 [==============================] - 11s 21ms/step - loss: 1.4023 - pi_loss: 1.0035 - v_loss: 0.3988
+Epoch 3/10
+510/510 [==============================] - 11s 21ms/step - loss: 1.3439 - pi_loss: 0.9739 - v_loss: 0.3701
+Epoch 4/10
+510/510 [==============================] - 11s 21ms/step - loss: 1.3034 - pi_loss: 0.9509 - v_loss: 0.3525
+Epoch 5/10
+510/510 [==============================] - 11s 21ms/step - loss: 1.2760 - pi_loss: 0.9359 - v_loss: 0.3401
+Epoch 6/10
+510/510 [==============================] - 11s 21ms/step - loss: 1.2480 - pi_loss: 0.9265 - v_loss: 0.3215
+Epoch 7/10
+510/510 [==============================] - 11s 21ms/step - loss: 1.2118 - pi_loss: 0.9063 - v_loss: 0.3056
+Epoch 8/10
+510/510 [==============================] - 11s 21ms/step - loss: 1.1939 - pi_loss: 0.8988 - v_loss: 0.2951
+Epoch 9/10
+510/510 [==============================] - 11s 21ms/step - loss: 1.1798 - pi_loss: 0.8883 - v_loss: 0.2914
+Epoch 10/10
+510/510 [==============================] - 11s 21ms/step - loss: 1.1660 - pi_loss: 0.8852 - v_loss: 0.2808
+2022-06-18 06:58:38 fran-GL65-Leopard-10SEK Coach[4994] INFO PITTING AGAINST PREVIOUS VERSION
+Arena.playGames (1): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [07:51<00:00, 23.58s/it]
+Arena.playGames (2): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [07:11<00:00, 21.56s/it]
+2022-06-18 07:13:41 fran-GL65-Leopard-10SEK Coach[4994] INFO NEW/PREV WINS : 17 / 12 ; DRAWS : 11
+2022-06-18 07:13:41 fran-GL65-Leopard-10SEK Coach[4994] INFO REJECTING NEW MODEL
+2022-06-18 07:13:41.825345: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+2022-06-18 07:13:41 fran-GL65-Leopard-10SEK Coach[4994] INFO Starting Iter #9 ...
+Self Play: 100%|████████████████████████████████████████████████████████████████████████████████| 100/100 [28:28<00:00, 17.08s/it]
+Checkpoint Directory exists! 
+./temp/temp.pth.tar
+2022-06-18 07:42:10.512992: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+Epoch 1/10
+569/569 [==============================] - 12s 22ms/step - loss: 1.5808 - pi_loss: 1.1063 - v_loss: 0.4745
+Epoch 2/10
+569/569 [==============================] - 12s 21ms/step - loss: 1.4717 - pi_loss: 1.0382 - v_loss: 0.4335
+Epoch 3/10
+569/569 [==============================] - 12s 21ms/step - loss: 1.3924 - pi_loss: 0.9903 - v_loss: 0.4022
+Epoch 4/10
+569/569 [==============================] - 12s 21ms/step - loss: 1.3477 - pi_loss: 0.9641 - v_loss: 0.3836
+Epoch 5/10
+569/569 [==============================] - 12s 21ms/step - loss: 1.3040 - pi_loss: 0.9431 - v_loss: 0.3609
+Epoch 6/10
+569/569 [==============================] - 12s 21ms/step - loss: 1.2678 - pi_loss: 0.9274 - v_loss: 0.3404
+Epoch 7/10
+569/569 [==============================] - 12s 21ms/step - loss: 1.2415 - pi_loss: 0.9114 - v_loss: 0.3302
+Epoch 8/10
+569/569 [==============================] - 12s 21ms/step - loss: 1.2154 - pi_loss: 0.9012 - v_loss: 0.3141
+Epoch 9/10
+569/569 [==============================] - 12s 21ms/step - loss: 1.1933 - pi_loss: 0.8893 - v_loss: 0.3041
+Epoch 10/10
+569/569 [==============================] - 12s 21ms/step - loss: 1.1762 - pi_loss: 0.8820 - v_loss: 0.2942
+2022-06-18 07:44:13 fran-GL65-Leopard-10SEK Coach[4994] INFO PITTING AGAINST PREVIOUS VERSION
+Arena.playGames (1): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [05:25<00:00, 16.27s/it]
+Arena.playGames (2): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [08:38<00:00, 25.93s/it]
+2022-06-18 07:58:17 fran-GL65-Leopard-10SEK Coach[4994] INFO NEW/PREV WINS : 22 / 14 ; DRAWS : 4
+2022-06-18 07:58:17 fran-GL65-Leopard-10SEK Coach[4994] INFO ACCEPTING NEW MODEL
+Checkpoint Directory exists! 
+./temp/checkpoint_9.pth.tar
+Checkpoint Directory exists! 
+./temp/best.pth.tar
+2022-06-18 07:58:17 fran-GL65-Leopard-10SEK Coach[4994] INFO Starting Iter #10 ...
+Self Play: 100%|████████████████████████████████████████████████████████████████████████████████| 100/100 [26:55<00:00, 16.16s/it]
+Checkpoint Directory exists! 
+./temp/temp.pth.tar
+2022-06-18 08:25:13.662359: W tensorflow/core/util/tensor_slice_reader.cc:95] Could not open ./temp/temp.pth.tar: Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?
+Epoch 1/10
+628/628 [==============================] - 14s 22ms/step - loss: 1.2817 - pi_loss: 0.9270 - v_loss: 0.3547
+Epoch 2/10
+628/628 [==============================] - 14s 22ms/step - loss: 1.2020 - pi_loss: 0.8823 - v_loss: 0.3197
+Epoch 3/10
+628/628 [==============================] - 14s 22ms/step - loss: 1.1762 - pi_loss: 0.8693 - v_loss: 0.3070
+Epoch 4/10
+628/628 [==============================] - 14s 22ms/step - loss: 1.1491 - pi_loss: 0.8594 - v_loss: 0.2897
+Epoch 5/10
+628/628 [==============================] - 14s 22ms/step - loss: 1.1285 - pi_loss: 0.8495 - v_loss: 0.2790
+Epoch 6/10
+628/628 [==============================] - 14s 22ms/step - loss: 1.1225 - pi_loss: 0.8472 - v_loss: 0.2753
+Epoch 7/10
+628/628 [==============================] - 14s 22ms/step - loss: 1.1077 - pi_loss: 0.8395 - v_loss: 0.2682
+Epoch 8/10
+628/628 [==============================] - 14s 22ms/step - loss: 1.0957 - pi_loss: 0.8362 - v_loss: 0.2595
+Epoch 9/10
+628/628 [==============================] - 14s 22ms/step - loss: 1.0849 - pi_loss: 0.8326 - v_loss: 0.2523
+Epoch 10/10
+628/628 [==============================] - 14s 22ms/step - loss: 1.0771 - pi_loss: 0.8264 - v_loss: 0.2508
+2022-06-18 08:27:32 fran-GL65-Leopard-10SEK Coach[4994] INFO PITTING AGAINST PREVIOUS VERSION
+Arena.playGames (1): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [03:14<00:00,  9.70s/it]
+Arena.playGames (2): 100%|████████████████████████████████████████████████████████████████████████| 20/20 [05:18<00:00, 15.92s/it]
+2022-06-18 08:36:04 fran-GL65-Leopard-10SEK Coach[4994] INFO NEW/PREV WINS : 26 / 11 ; DRAWS : 3
+2022-06-18 08:36:04 fran-GL65-Leopard-10SEK Coach[4994] INFO ACCEPTING NEW MODEL
+Checkpoint Directory exists! 
+./temp/checkpoint_10.pth.tar
+Checkpoint Directory exists! 
+./temp/best.pth.tar
