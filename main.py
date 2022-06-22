@@ -19,7 +19,7 @@ log = logging.getLogger(__name__)
 coloredlogs.install(level='INFO')  # Change this to DEBUG to see more info.
 
 args = dotdict({
-    'numIters': 10,
+    'numIters': 50,
     'numEps': 100,              # Number of complete self-play games to simulate during a new iteration.
     'tempThreshold': 15,        #
     'updateThreshold': 0.55,     # During arena playoff, new neural net will be accepted if threshold or more of games are won.
@@ -30,7 +30,7 @@ args = dotdict({
 
     'checkpoint': './temp/',
     'load_model': False,
-    'load_folder_file': ('./temp/','best.pth.tar'),
+    'load_folder_file': ('./alquerque/best_models','5_long_symetric_best.pth.tar'),
     'numItersForTrainExamplesHistory': 12,
 
 })

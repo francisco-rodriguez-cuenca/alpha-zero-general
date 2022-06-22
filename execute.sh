@@ -1,1 +1,1 @@
-/home/fran/Documents/MBD/SegundoCuatrimestre/ML/DeepLearning/env/bin/python /home/fran/Documents/IA/alpha-zero-general/main.py > 10_long_symetric.txt 2> 10_long_symetric.err &
+/home/fran/Documents/MBD/SegundoCuatrimestre/ML/DeepLearning/env/bin/python /home/fran/Documents/IA/alpha-zero-general/main.py > 100_long_symetric.txt 2>&1 & 

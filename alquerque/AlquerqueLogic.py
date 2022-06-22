@@ -126,7 +126,7 @@ class Board():
     def is_draw(self):
         """Check whether the game is too long
         """
-        return np.all(self.pieces[5]==1)
+        return np.all(self.pieces[5][1:]==1)
 
     def execute_move(self, move, color):
         """Perform the given move on the board; 
