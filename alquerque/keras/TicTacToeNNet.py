@@ -5,7 +5,7 @@ from utils import *
 import argparse
 from keras.models import *
 from keras.layers import *
-from keras.optimizers import *
+from tf.keras.optimizers import *
 
 """
 NeuralNet for the game of TicTacToe.
