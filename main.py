@@ -43,6 +43,8 @@ def main():
     g = AlquerqueGame()
 
     log.info('Loading %s...', nn.__name__)
+    log.info('Args:', args)
+    
     nnet = nn(g)
 
     if args.load_model:
