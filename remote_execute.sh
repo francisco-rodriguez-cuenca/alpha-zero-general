@@ -1,0 +1,1 @@
+python3 /alpha-zero-general/main.py > 100_symetric.txt 2>&1 &
