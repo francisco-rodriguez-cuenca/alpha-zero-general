@@ -78,4 +78,4 @@ class NNetWrapper(NeuralNet):
         filepath = os.path.join(folder, filename)
         if not os.path.exists(filepath):
             raise("No model in path '{}'".format(filepath))
-        self.nnet.model.load_model(filepath)
+        self.nnet.model.load(filepath)
