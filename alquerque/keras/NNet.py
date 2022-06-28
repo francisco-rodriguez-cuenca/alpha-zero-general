@@ -11,7 +11,7 @@ from utils import *
 from NeuralNet import NeuralNet
 
 import argparse
-from .TicTacToeNNet import TicTacToeNNet as onnet
+from .AlquerqueNNet import AlquerqueNNet as annet
 
 """
 NeuralNet wrapper class for the TicTacToeNNet.
@@ -33,7 +33,7 @@ args = dotdict({
 
 class NNetWrapper(NeuralNet):
     def __init__(self, game):
-        self.nnet = onnet(game, args)
+        self.nnet = annet(game, args)
         self.board_x, self.board_y = game.getBoardSize()
         self.action_size = game.getActionSize()
 

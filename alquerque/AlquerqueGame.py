@@ -79,21 +79,22 @@ class AlquerqueGame(Game):
         return res
 
     def getSymmetries(self, board, pi):
+        return [(board,pi)]
 
-        new_board = board[:self.n]
-        pi_board = np.reshape(pi, (self.n, self.n, self.n, self.n))
-        l = []
+        # new_board = board[:self.n]
+        # pi_board = np.reshape(pi, (self.n, self.n, self.n, self.n))
+        # l = []
 
-        for i in range(1, 5):
-            for j in [True, False]:
-                newB = np.rot90(new_board, i)
-                newPi = np.rot90(pi_board, i)
-                newPi = np.rot90(np.array([[np.rot90(y_0, i).tolist() for y_0 in x_0] for x_0 in pi_board]),i)
-                if j:
-                    newB = np.fliplr(newB)
-                    newPi = np.fliplr(np.array([[np.fliplr(y_0).tolist() for y_0 in x_0] for x_0 in newPi]))
-                l += [(np.append(newB, board[self.n:], axis = 0), list(newPi.ravel()))]
-        return l
+        # for i in range(1, 5):
+        #     for j in [True, False]:
+        #         newB = np.rot90(new_board, i)
+        #         newPi = np.rot90(pi_board, i)
+        #         newPi = np.rot90(np.array([[np.rot90(y_0, i).tolist() for y_0 in x_0] for x_0 in pi_board]),i)
+        #         if j:
+        #             newB = np.fliplr(newB)
+        #             newPi = np.fliplr(np.array([[np.fliplr(y_0).tolist() for y_0 in x_0] for x_0 in newPi]))
+        #         l += [(np.append(newB, board[self.n:], axis = 0), list(newPi.ravel()))]
+        # return l
 
     def stringRepresentation(self, board):
         # 8x8 numpy array (canonical board)

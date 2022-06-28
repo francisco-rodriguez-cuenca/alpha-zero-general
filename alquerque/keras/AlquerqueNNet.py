@@ -8,14 +8,14 @@ from tensorflow.keras.layers import *
 from tensorflow.keras.optimizers import *
 
 """
-NeuralNet for the game of TicTacToe.
+NeuralNet for the game of Alquerque.
 
 Author: Evgeny Tyurin, github.com/evg-tyurin
 Date: Jan 5, 2018.
 
 Based on the OthelloNNet by SourKream and Surag Nair.
 """
-class TicTacToeNNet():
+class AlquerqueNNet():
     def __init__(self, game, args):
         # game params
         self.board_x, self.board_y = game.getBoardSize()
