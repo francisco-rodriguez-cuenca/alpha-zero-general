@@ -1,1 +1,1 @@
-/home/fran/Documents/MBD/SegundoCuatrimestre/ML/DeepLearning/env/bin/python /home/fran/Documents/IA/alpha-zero-general/main.py > 100_80b3_20ep_symetric.txt 2>&1 &
+/home/fran/Documents/MBD/SegundoCuatrimestre/ML/DeepLearning/env/bin/python /home/fran/Documents/IA/alpha-zero-general/main.py > 100_symetric_optimized.txt 2>&1 &
