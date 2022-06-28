@@ -1,1 +1,1 @@
-python3 main.py > 100_symetric.txt 2>&1 &
+python3 main.py > 100_symetric_optimized.txt 2>&1 &
