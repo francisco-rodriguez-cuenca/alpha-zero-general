@@ -3,7 +3,6 @@ import os
 import sys
 from collections import deque
 from pickle import Pickler, Unpickler
-import pickle, pickletools
 from random import shuffle
 
 import numpy as np
@@ -137,9 +136,7 @@ class Coach():
             os.makedirs(folder)
         filename = os.path.join(folder, self.getCheckpointFile(iteration) + ".examples")
         with open(filename, "wb+") as f:
-            pickled = pickle.dumps(self.trainExamplesHistory)
-            optimized_pickle = pickletools.optimize(pickled)
-            f.write(optimized_pickle)
+            Pickler(f).dump(self.trainExamplesHistory)
         f.closed
 
     def loadTrainExamples(self):
