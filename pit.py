@@ -35,7 +35,7 @@ hp = HumanAlquerquePlayer(g).play
 n1 = NNet(g)
 n1.load_checkpoint('./temp/', 'best.h5')
 
-args1 = dotdict({'numMCTSSims': 50, 'cpuct':12.0})
+args1 = dotdict({'numMCTSSims': 50, 'cpuct':1.0})
 mcts1 = MCTS(g, n1, args1)
 n1p = lambda x: np.argmax(mcts1.getActionProb(x, temp=0))
 

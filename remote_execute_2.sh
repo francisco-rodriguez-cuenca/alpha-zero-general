@@ -1,0 +1,1 @@
+python3 main_2.py > 200_nonsymetric_30max.txt 2>&1 &
