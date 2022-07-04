@@ -33,7 +33,7 @@ args = dotdict({
     'checkpoint': './temp_2/',
     'load_model': False,
     'load_folder_file': ('./alquerque/best_models','5_long_symetric_best.pth.tar'),
-    'numItersForTrainExamplesHistory': 30,
+    'numItersForTrainExamplesHistory': 10,
 
 })
 
