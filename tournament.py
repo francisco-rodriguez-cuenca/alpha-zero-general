@@ -78,6 +78,8 @@ def pit(players):
 
     # Jugadores
 
+    print(f"{players[0]} VS {players[1]}")
+
     n1 = NNet(g)
     n1.load_checkpoint("/".join(players[0].split("/")[:-1]), players[0].split("/")[-1])
     args1 = dotdict({'numMCTSSims': 25, 'cpuct':1.0})
@@ -92,9 +94,9 @@ def pit(players):
 
     #Juego
 
-    arena = Arena.Arena(n1p, n2p, g)
+    arena = Arena.Arena(n1p, n2p, g, display=AlquerqueGame.display)
     
-    player_1, player_2, _ =  arena.playGames(2)
+    player_1, player_2, _ =  arena.playGames(2, verbose=True)
 
     if player_1 > player_2:
         res = 1
