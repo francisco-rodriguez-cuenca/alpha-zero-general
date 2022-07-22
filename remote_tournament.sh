@@ -1,0 +1,1 @@
+python3 tournament.py > tournament.txt 2>&1 &
