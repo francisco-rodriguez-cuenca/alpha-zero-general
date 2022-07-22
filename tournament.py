@@ -40,7 +40,7 @@ games_df = (
         ~a.apply(frozenset, axis=1).duplicated() # Eliminar duplicados ab == ba
     ]
     # .groupby('Player_1').apply(lambda x: x.sample(10)).reset_index(drop=True) # Select number of games per player
-    .sample(n = 10)
+    # .sample(n = 10)
 )
 games_df
 
