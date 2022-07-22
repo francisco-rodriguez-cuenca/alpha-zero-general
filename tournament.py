@@ -39,8 +39,6 @@ games_df = (
         (a.Player_1 != a.Player_2) & # Eliminar partidas contra uno mismo
         ~a.apply(frozenset, axis=1).duplicated() # Eliminar duplicados ab == ba
     ]
-    # .groupby('Player_1').apply(lambda x: x.sample(10)).reset_index(drop=True) # Select number of games per player
-    # .sample(n = 10)
 )
 games_df
 
@@ -140,7 +138,7 @@ elo_dict = (
         .drop_duplicates()
     )
     .assign(
-        ELO = 1000
+        ELO = 0
     )
     .set_index("Player")
     .to_dict('index')
